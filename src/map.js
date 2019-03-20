@@ -534,6 +534,7 @@ jvm.Map.prototype = {
   bindZoomButtons: function() {
     var map = this;
 
+    /* old functionality
     jvm.$('<div/>').addClass('jvectormap-zoomin').text('+').appendTo(this.container);
     jvm.$('<div/>').addClass('jvectormap-zoomout').html('&#x2212;').appendTo(this.container);
 
@@ -541,6 +542,16 @@ jvm.Map.prototype = {
       map.setScale(map.scale * map.params.zoomStep, map.width / 2, map.height / 2, false, map.params.zoomAnimate);
     });
     this.container.find('.jvectormap-zoomout').click(function(){
+      map.setScale(map.scale / map.params.zoomStep, map.width / 2, map.height / 2, false, map.params.zoomAnimate);
+    });
+    */
+
+    // only enable clicking on buttons with the relevant class
+    jvm.$('.jvectormap-zoomin').click(function(){
+      map.setScale(map.scale * map.params.zoomStep, map.width / 2, map.height / 2, false, map.params.zoomAnimate);
+    });
+
+    jvm.$('.jvectormap-zoomout').click(function(){
       map.setScale(map.scale / map.params.zoomStep, map.width / 2, map.height / 2, false, map.params.zoomAnimate);
     });
   },

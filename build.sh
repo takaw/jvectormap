@@ -58,4 +58,4 @@ fi
 
 cat ${files[*]} >> $minified
 
-uglifyjs $minified -o $minified -c
+#uglifyjs $minified -o $minified -c
