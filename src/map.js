@@ -131,10 +131,12 @@ jvm.Map = function(params) {
 
   this.setBackgroundColor(this.params.backgroundColor);
 
+  /* TK: disable and resize manually
   this.onResize = function(){
     map.updateSize();
   }
   jvm.$(window).resize(this.onResize);
+  */
 
   for (e in jvm.Map.apiEvents) {
     if (this.params[e]) {
